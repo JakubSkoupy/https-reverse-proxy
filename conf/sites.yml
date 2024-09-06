@@ -1,0 +1,14 @@
+http:
+  services:
+    app:
+      loadBalancer:
+        servers:
+          - url: "http://localhost:8081"
+
+  routers:
+    router0:  
+      service: app
+      rule: PathPrefix(`/`)
+      #rule: Host(`localhost`) || Host(`192.168.2.78`) 
+      # TLS might need host to provide a certificate, only using PathPrefix rule might not work
+      tls: {}

@@ -1,0 +1,16 @@
+entryPoints:
+  web:
+    address: ":80"   # HTTP port
+  websecure:
+    address: ":443"  # HTTPS port
+
+providers:
+  file:
+    filename: /etc/traefik/sites.yml
+
+log:
+  level: TRACE
+
+api:
+    insecure: true
+    dashboard: true
