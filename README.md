@@ -80,7 +80,8 @@ http:
 ```
 make sure the `services/app` matches with `routers/router0/service`
 rule `PathPrefix(`/`)` should accept everything on the entry ports
-`tls {}` (transport layer security) is needed for the https (port 443), without this, some ports will work, but not 443
+`tls {}` (transport layer security) is needed for the https (port 443), without this, some ports will work, but not 443.
+`tls` Without arguments makes traefik provide a self-signed certificate, that will not be trusted.
 
 ### 4. create traefik.yml
 add `traefik.yml` to `conf` directory
@@ -114,6 +115,20 @@ api:
 
 ### 5. run the docker compose
 
+Start the docker daemon
+on sytemD linux:
+```
+systemctl --user start docker
+```
+or to enable by default (--now starts the service)
+```
+systemctl --user enable docker --now
+```
+
+Ubuntu
+```
+sudo service docker start
+```
 To start the proxy, run:
 ```
 docker compose up -d
