@@ -12,5 +12,25 @@ log:
   level: TRACE
 
 api:
-    insecure: true
-    dashboard: true
+    insecure: false
+    dashboard: false
+
+
+tls:
+  stores:
+    default:
+      defaultGeneratedCert:
+        resolver: resolver0
+        domain:
+          main: 192.168.2.78
+
+
+certificatesResolvers:
+  resolver0:
+    acme:
+      email: jakub.skoupy@jetveo.io
+      storage: acme/acme.json
+      tlschallenge: {}
+      httpChallenge:
+        # used during the challenge
+        entryPoint: web

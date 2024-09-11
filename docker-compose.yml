@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   reverse-proxy:
 
@@ -20,3 +18,5 @@ services:
 
       # Mount the conf volume
       - /home/kuba/jetveo/drfit/traefik/conf:/etc/traefik
+      - /home/kuba/jetveo/drfit/traefik/acme:/etc/acme
+      # - ${PWD}/conf:/etc/traefik
