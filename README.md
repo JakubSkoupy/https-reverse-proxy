@@ -55,9 +55,8 @@ services:
 
 
       # Mount the conf volume
-      - ${PWD}/conf:/etc/traefik
+      - ./conf:/etc/traefik
 ```
-if `${PWD}` doesn't work, you might need to export it, or specify the `conf` directory path explicitly
 make a conf directory
 
 ### 3. create sites.yml
