@@ -8,8 +8,8 @@ http:
   routers:
     router0:  
       service: app
-      # rule: PathPrefix(`/`)
-      rule: Host(`localhost`) || Host(`192.168.2.78`) 
+      rule: PathPrefix(`/`)
+      # rule: Host(`localhost`) # || Host(`192.168.0.00`) 
       # TLS might need host to provide a certificate, only using PathPrefix rule might not work
       tls: {}
       # tls: resolver0
